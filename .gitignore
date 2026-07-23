@@ -1,0 +1,44 @@
+# Dataset
+data/
+dataset/
+datasets/
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Model checkpoints
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Experiment tracking caches
+wandb/
+runs/
+
+# Environment variables and secrets
+.env
+*.env
+
+# Temporary files
+*.tmp
+*.swp
+~$*
