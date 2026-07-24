@@ -1,0 +1,17 @@
+{
+  "random_seed_start": 42,
+  "selected_test_seed": 203,
+  "selected_validation_seed": 154,
+  "test_distribution_deviation": 0.002940674077522659,
+  "validation_distribution_deviation": 0.0032591098881207467,
+  "target_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "internal_test": 0.15
+  },
+  "actual_ratios": {
+    "train": 0.6999373683311507,
+    "validation": 0.15003131583442464,
+    "internal_test": 0.15003131583442464
+  }
+}

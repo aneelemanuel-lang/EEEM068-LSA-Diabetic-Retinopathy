@@ -1,0 +1,5 @@
+partition,images,patients
+train,24586,12293
+val,5270,2635
+internal_test,5270,2635
+total,35126,17563

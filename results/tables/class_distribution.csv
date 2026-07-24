@@ -1,0 +1,21 @@
+partition,level,class_name,count,proportion
+complete,0,No DR,25810,0.7348
+complete,1,Mild,2443,0.0695
+complete,2,Moderate,5292,0.1507
+complete,3,Severe,873,0.0249
+complete,4,Proliferative DR,708,0.0202
+train,0,No DR,18062,0.7346
+train,1,Mild,1709,0.0695
+train,2,Moderate,3698,0.1504
+train,3,Severe,610,0.0248
+train,4,Proliferative DR,507,0.0206
+val,0,No DR,3873,0.7349
+val,1,Mild,368,0.0698
+val,2,Moderate,800,0.1518
+val,3,Severe,127,0.0241
+val,4,Proliferative DR,102,0.0194
+internal_test,0,No DR,3875,0.7353
+internal_test,1,Mild,366,0.0694
+internal_test,2,Moderate,794,0.1507
+internal_test,3,Severe,136,0.0258
+internal_test,4,Proliferative DR,99,0.0188
