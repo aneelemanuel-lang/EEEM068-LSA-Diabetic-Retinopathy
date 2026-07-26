@@ -1,0 +1,59 @@
+{
+  "model_name": "efficientnet_b4",
+  "run_id": "exp01_shared_p0_wrs_focal_seed42",
+  "seed": 42,
+  "preprocessing": "P0",
+  "num_classes": 5,
+  "class_names": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "image_size": 224,
+  "batch_size": 16,
+  "phase1_epochs": 10,
+  "phase2_epochs": 25,
+  "phase1_head_lr": 0.0003,
+  "phase2_head_lr": 0.0001,
+  "phase2_backbone_lr": 1e-05,
+  "weight_decay": 0.01,
+  "dropout": 0.3,
+  "focal_gamma": 2.0,
+  "early_stopping_patience": 8,
+  "grad_clip": 1.0,
+  "sampler": "WeightedRandomSampler",
+  "loss": "FocalLoss(alpha=None)",
+  "checkpoint_selection_metric": "validation_qwk",
+  "total_parameters": 17561165,
+  "train_size": 24586,
+  "val_size": 5270,
+  "internal_test_size": 5270,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "device": "NVIDIA RTX A4000",
+  "torch_version": "2.11.0+cu130",
+  "timm_version": "1.0.27",
+  "train_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/train_split.csv",
+  "val_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/val_split.csv",
+  "internal_test_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/internal_test_split.csv",
+  "imagenet_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "imagenet_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "train_augmentation": {
+    "resize_factor": 1.14,
+    "random_crop": 224,
+    "horizontal_flip_probability": 0.5,
+    "vertical_flip_probability": 0.5,
+    "rotation_degrees": 30,
+    "random_erasing_probability": 0.2
+  }
+}
