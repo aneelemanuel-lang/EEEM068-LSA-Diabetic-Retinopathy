@@ -1,0 +1,140 @@
+{
+  "experiment_id": "D07",
+  "run_name": "D07_two_phase_finetuning",
+  "experiment_type": "training_strategy_ablation",
+  "model_name": "deit3_base_patch16_224.fb_in1k",
+  "seed": 42,
+  "image_size": 224,
+  "num_classes": 5,
+  "class_names": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "batch_size": 32,
+  "learning_rate": 3e-05,
+  "weight_decay": 0.01,
+  "warmup_epochs": 0,
+  "max_epochs": 25,
+  "early_stopping_patience": 7,
+  "use_class_weights": true,
+  "use_wrs": false,
+  "label_smoothing": 0.05,
+  "grad_clip": 1.0,
+  "qwk_tolerance": 0.0001,
+  "selection_metric": "validation_qwk",
+  "selection_tiebreak": "validation_macro_f1",
+  "training_mode": "two_phase",
+  "preprocessing": "P0",
+  "pretrained": true,
+  "optimizer": "AdamW",
+  "loss_function": "clipped_class_weighted_cross_entropy",
+  "sampler": "shuffle",
+  "scheduler": {
+    "name": "two_phase",
+    "phase1": {
+      "epochs": 3,
+      "head_lr": 0.0001,
+      "scheduler": "constant"
+    },
+    "phase2": {
+      "max_epochs": 22,
+      "backbone_lr": 3e-05,
+      "head_lr": 0.0001,
+      "scheduler": "CosineAnnealingLR"
+    }
+  },
+  "normalisation_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalisation_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "training_augmentation": {
+    "policy": "safe_retinal_augmentation",
+    "resize": [
+      224,
+      224
+    ],
+    "horizontal_flip_probability": 0.5,
+    "rotation_degrees": 7,
+    "brightness_jitter": 0.08,
+    "contrast_jitter": 0.08,
+    "saturation_jitter": 0.04,
+    "hue_jitter": 0.01,
+    "translation_fraction": 0.02,
+    "scale_min": 0.98,
+    "scale_max": 1.02,
+    "vertical_flip": false,
+    "mixup": false,
+    "random_erasing": false
+  },
+  "train_class_counts": {
+    "0": 18062,
+    "1": 1709,
+    "2": 3698,
+    "3": 610,
+    "4": 507
+  },
+  "total_parameters": 85820165,
+  "train_size": 24586,
+  "val_size": 5270,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "device": "NVIDIA RTX A4000",
+  "torch_version": "2.11.0+cu130",
+  "timm_version": "1.0.27",
+  "train_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/train_split.csv",
+  "val_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/val_split.csv",
+  "phase1_epochs": 3,
+  "phase1_head_lr": 0.0001,
+  "phase2_max_epochs": 22,
+  "phase2_patience": 7,
+  "backbone_lr": 3e-05,
+  "head_lr": 0.0001,
+  "phase1": {
+    "epochs": 3,
+    "training_scope": "classification_head_only",
+    "head_learning_rate": 0.0001,
+    "scheduler": "constant"
+  },
+  "phase2": {
+    "max_epochs": 22,
+    "patience": 7,
+    "training_scope": "full_model",
+    "backbone_learning_rate": 3e-05,
+    "head_learning_rate": 0.0001,
+    "scheduler": "CosineAnnealingLR"
+  },
+  "class_weight_method": "balanced",
+  "class_weight_clip_min": 0.5,
+  "class_weight_clip_max": 2.5,
+  "raw_class_weights": [
+    0.27224006200863693,
+    2.8772381509654767,
+    1.3296917252568956,
+    8.060983606557377,
+    9.69861932938856
+  ],
+  "clipped_class_weights": [
+    0.5,
+    2.5,
+    1.3296917252568956,
+    2.5,
+    2.5
+  ],
+  "change_from_d05": {
+    "parameter": "training_strategy",
+    "d05_value": "single_stage",
+    "d07_value": "two_phase",
+    "inherited_batch_size": 32,
+    "inherited_learning_rate": 3e-05,
+    "inherited_weight_decay": 0.01
+  }
+}
