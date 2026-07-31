@@ -1,0 +1,84 @@
+{
+  "experiment_id": "M04",
+  "run_name": "M04_focal_loss",
+  "experiment_type": "loss_ablation",
+  "focal_gamma": 2.0,
+  "model_name": "maxvit_tiny_tf_224.in1k",
+  "seed": 42,
+  "image_size": 224,
+  "num_classes": 5,
+  "class_names": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "batch_size": 32,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.05,
+  "warmup_epochs": 3,
+  "max_epochs": 25,
+  "early_stopping_patience": 7,
+  "use_class_weights": false,
+  "use_wrs": false,
+  "label_smoothing": 0.0,
+  "grad_clip": 1.0,
+  "qwk_tolerance": 0.0001,
+  "selection_metric": "validation_qwk",
+  "selection_tiebreak": "validation_macro_f1",
+  "training_mode": "single_stage",
+  "preprocessing": "P0",
+  "pretrained": true,
+  "optimizer": "AdamW",
+  "loss_function": "focal_loss",
+  "sampler": "shuffle",
+  "scheduler": {
+    "name": "SequentialLR",
+    "warmup_scheduler": "LinearLR",
+    "warmup_start_factor": 0.1,
+    "warmup_end_factor": 1.0,
+    "warmup_epochs": 3,
+    "main_scheduler": "CosineAnnealingLR"
+  },
+  "normalisation_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalisation_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "training_augmentation": {
+    "policy": "none",
+    "resize": [
+      224,
+      224
+    ],
+    "stochastic_augmentation": false
+  },
+  "train_class_counts": {
+    "0": 18062,
+    "1": 1709,
+    "2": 3698,
+    "3": 610,
+    "4": 507
+  },
+  "total_parameters": 30406093,
+  "train_size": 24586,
+  "val_size": 5270,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "device": "NVIDIA RTX A4000",
+  "torch_version": "2.11.0+cu130",
+  "timm_version": "1.0.27",
+  "train_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/train_split.csv",
+  "val_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/val_split.csv",
+  "change_from_m01": {
+    "parameter": "loss_function",
+    "m01_value": "CrossEntropyLoss",
+    "m04_value": "focal_loss"
+  }
+}
