@@ -1,0 +1,10 @@
+{
+  "epoch": 6,
+  "phase": 2,
+  "phase_epoch": 3,
+  "val_loss": 0.9153351713855533,
+  "val_accuracy": 0.8178368121442126,
+  "val_balanced_accuracy": 0.5539369286382301,
+  "val_macro_f1": 0.5509449924509731,
+  "val_qwk": 0.7553845337992074
+}
