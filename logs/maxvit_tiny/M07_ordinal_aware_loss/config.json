@@ -1,0 +1,120 @@
+{
+  "experiment_id": "M07",
+  "run_name": "M07_ordinal_aware_loss",
+  "experiment_type": "ordinal_loss_ablation",
+  "predecessor_experiment": "M05_safe_retinal_augmentation",
+  "predecessor_reason": "strongest_mild_aware_configuration",
+  "primary_metric": "validation_qwk",
+  "mild_diagnostic_metric": "validation_mild_f1",
+  "ordinal_penalty_type": "normalised_expected_squared_grade_distance",
+  "ordinal_penalty_weight": 0.5,
+  "model_name": "maxvit_tiny_tf_224.in1k",
+  "seed": 42,
+  "image_size": 224,
+  "num_classes": 5,
+  "class_names": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "batch_size": 32,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.05,
+  "warmup_epochs": 3,
+  "max_epochs": 25,
+  "early_stopping_patience": 7,
+  "use_class_weights": true,
+  "use_wrs": false,
+  "label_smoothing": 0.0,
+  "grad_clip": 1.0,
+  "qwk_tolerance": 0.0001,
+  "selection_metric": "validation_qwk",
+  "selection_tiebreak": "validation_macro_f1",
+  "training_mode": "single_stage",
+  "preprocessing": "P0",
+  "pretrained": true,
+  "optimizer": "AdamW",
+  "loss_function": "clipped_weighted_ce_plus_normalised_expected_squared_ordinal_penalty",
+  "sampler": "shuffle",
+  "scheduler": {
+    "name": "SequentialLR",
+    "warmup_scheduler": "LinearLR",
+    "warmup_start_factor": 0.1,
+    "warmup_end_factor": 1.0,
+    "warmup_epochs": 3,
+    "main_scheduler": "CosineAnnealingLR"
+  },
+  "normalisation_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalisation_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "training_augmentation": {
+    "policy": "safe_retinal_augmentation",
+    "resize": [
+      224,
+      224
+    ],
+    "horizontal_flip_probability": 0.5,
+    "geometric_transform": "single_random_affine",
+    "interpolation": "bilinear",
+    "rotation_degrees": 7,
+    "brightness_jitter": 0.05,
+    "contrast_jitter": 0.05,
+    "saturation_jitter": 0.02,
+    "hue_jitter": 0.0,
+    "translation_fraction": 0.02,
+    "scale_min": 0.98,
+    "scale_max": 1.02,
+    "vertical_flip": false,
+    "mixup": false,
+    "random_erasing": false
+  },
+  "train_class_counts": {
+    "0": 18062,
+    "1": 1709,
+    "2": 3698,
+    "3": 610,
+    "4": 507
+  },
+  "total_parameters": 30406093,
+  "train_size": 24586,
+  "val_size": 5270,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "device": "NVIDIA RTX A4000",
+  "torch_version": "2.11.0+cu130",
+  "timm_version": "1.0.27",
+  "train_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/train_split.csv",
+  "val_csv": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/val_split.csv",
+  "class_weight_method": "balanced",
+  "class_weight_clip_min": 0.5,
+  "class_weight_clip_max": 2.5,
+  "raw_class_weights": [
+    0.27224006200863693,
+    2.8772381509654767,
+    1.3296917252568956,
+    8.060983606557377,
+    9.69861932938856
+  ],
+  "clipped_class_weights": [
+    0.5,
+    2.5,
+    1.3296917252568956,
+    2.5,
+    2.5
+  ],
+  "change_from_m05": {
+    "parameter": "loss_function",
+    "m05_value": "clipped_class_weighted_cross_entropy",
+    "m07_value": "clipped_weighted_ce_plus_normalised_expected_squared_ordinal_penalty",
+    "ordinal_penalty_weight": 0.5
+  }
+}
