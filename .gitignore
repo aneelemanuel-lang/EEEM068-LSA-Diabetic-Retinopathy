@@ -43,4 +43,4 @@ runs/
 *.swp
 ~$*
 # Generated M09 guidance-map cache
-cache/maxvit_tiny/M09_guidance_maps/
+cache/
