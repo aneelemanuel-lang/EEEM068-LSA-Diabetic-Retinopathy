@@ -1,0 +1,8 @@
+model,logit_source,n_aligned_rows
+EfficientNet-B4,raw_npy,5270
+DeiT-III,reconstructed_from_probabilities,5270
+M07,reconstructed_from_probabilities,5270
+M09,raw_csv,5270
+M10,raw_csv,5270
+M11,raw_csv,5270
+M12,raw_npy,5270

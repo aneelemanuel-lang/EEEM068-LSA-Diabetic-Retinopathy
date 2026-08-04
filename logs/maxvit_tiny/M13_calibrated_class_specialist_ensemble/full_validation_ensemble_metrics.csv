@@ -1,0 +1,2 @@
+qwk,macro_f1,balanced_accuracy,accuracy,mae,within_one_grade_accuracy,large_grade_error_rate,nll,ece,brier,mild_to_no_dr,moderate_to_no_dr,severe_to_moderate,pdr_to_severe,large_errors_ge2,high_confidence_wrong
+0.7917080388466529,0.5732659912262135,0.5429267573787528,0.8398481973434535,0.22485768500948766,0.9392789373814042,0.06072106261859583,0.5165901093172629,0.04530603377876405,0.26104039062053397,300,218,66,7,320,273

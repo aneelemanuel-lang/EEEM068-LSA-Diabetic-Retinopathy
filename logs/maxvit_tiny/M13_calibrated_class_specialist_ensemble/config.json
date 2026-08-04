@@ -1,0 +1,37 @@
+{
+  "experiment_id": "M13",
+  "run_name": "M13_calibrated_class_specialist_ensemble",
+  "trains_new_network": false,
+  "internal_test_loaded": false,
+  "candidate_models": [
+    "EfficientNet-B4",
+    "DeiT-III",
+    "M07",
+    "M09",
+    "M10",
+    "M11",
+    "M12"
+  ],
+  "logit_sources": {
+    "EfficientNet-B4": "raw_npy",
+    "DeiT-III": "reconstructed_from_probabilities",
+    "M07": "reconstructed_from_probabilities",
+    "M09": "raw_csv",
+    "M10": "raw_csv",
+    "M11": "raw_csv",
+    "M12": "raw_npy"
+  },
+  "n_validation_rows": 5270,
+  "fold_seed": 42,
+  "n_oof_folds": 5,
+  "high_confidence_threshold": 0.8,
+  "weight_grid": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "selected_variant": "M13-D",
+  "selection_rule": "oof_qwk_then_macro_f1_then_nll_then_ece_then_simplicity"
+}

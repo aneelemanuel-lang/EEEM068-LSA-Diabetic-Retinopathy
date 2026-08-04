@@ -1,0 +1,38 @@
+{
+  "selected_variant": "M13-D",
+  "selection_rule": "oof_qwk_then_macro_f1_then_nll_then_ece_then_simplicity",
+  "models_included": [
+    "EfficientNet-B4",
+    "DeiT-III",
+    "M07",
+    "M09",
+    "M10",
+    "M11",
+    "M12"
+  ],
+  "logit_sources": {
+    "EfficientNet-B4": "raw_npy",
+    "DeiT-III": "reconstructed_from_probabilities",
+    "M07": "reconstructed_from_probabilities",
+    "M09": "raw_csv",
+    "M10": "raw_csv",
+    "M11": "raw_csv",
+    "M12": "raw_npy"
+  },
+  "n_validation_rows": 5270,
+  "oof_metrics_at_selection": {
+    "qwk": 0.7914214681888004,
+    "macro_f1": 0.5680122183217053,
+    "balanced_accuracy": 0.5400378908036214,
+    "accuracy": 0.8396584440227703,
+    "mae": 0.2252371916508539,
+    "within_one_grade_accuracy": 0.9394686907020873,
+    "large_grade_error_rate": 0.060531309297912714,
+    "nll": 0.5161011206667806,
+    "ece": 0.04303651497628292,
+    "brier": 0.26147073498042595
+  },
+  "fold_seed": 42,
+  "n_oof_folds": 5,
+  "frozen_warning": "These parameters are frozen after validation. They must not be changed after viewing internal-test results."
+}
