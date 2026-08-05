@@ -1,0 +1,4 @@
+image_id,case_name,selection_category
+38248_right,Correct high-confidence,correct_high_confidence
+29654_right,Mild predicted as No DR,mild_predicted_as_no_dr
+24772_left,Persistent error,all_headline_models_wrong
