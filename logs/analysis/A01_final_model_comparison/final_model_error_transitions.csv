@@ -1,0 +1,4 @@
+model_a,model_b,a_corrects_relative_to_b,a_newly_wrong_relative_to_b,jointly_wrong
+M13-D,M12,203,127,734
+M12,DeiT-III,417,227,710
+M12,EfficientNet-B4,1584,244,693

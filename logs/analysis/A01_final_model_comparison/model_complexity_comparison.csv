@@ -1,0 +1,5 @@
+model,parameter_count,input_resolution,inference_passes_per_image,ensemble_member_count,relative_deployment_complexity
+EfficientNet-B4,17561165,224,1,1,single model
+DeiT-III,85820165,224,1,1,single model
+M12,30411213,224,3,1,single model
+M13-D,177046700,n/a (multiple constituent resolutions),6,4,"ensemble of 4 models (DeiT-III, M09, M11, M12)"

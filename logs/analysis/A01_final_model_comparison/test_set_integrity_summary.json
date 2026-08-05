@@ -1,0 +1,11 @@
+{
+  "test_row_count": 5270,
+  "unique_image_ids": 5270,
+  "unique_patients": 2635,
+  "no_duplicate_image_ids": true,
+  "no_duplicate_rows": true,
+  "labels_in_range": true,
+  "no_image_overlap_with_train_val": true,
+  "no_patient_overlap_with_train_val": true,
+  "test_csv_path": "/scratch/New AML/EEEM068-LSA-Diabetic-Retinopathy/configs/splits/internal_test_split.csv"
+}

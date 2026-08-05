@@ -1,0 +1,29 @@
+model,error_type,count,percent_of_test_set
+EfficientNet-B4,Mild -> No DR,201,3.81404174573055
+EfficientNet-B4,Severe -> Moderate,35,0.6641366223908919
+EfficientNet-B4,PDR -> Moderate,20,0.3795066413662239
+EfficientNet-B4,No DR -> referable DR,333,6.318785578747628
+EfficientNet-B4,Referable DR -> No DR,238,4.516129032258065
+EfficientNet-B4,Errors >= 2 grades,639,12.125237191650854
+EfficientNet-B4,High-confidence incorrect (>=0.80),4,0.07590132827324478
+DeiT-III,Mild -> No DR,306,5.806451612903226
+DeiT-III,Severe -> Moderate,56,1.0626185958254268
+DeiT-III,PDR -> Moderate,26,0.49335863377609107
+DeiT-III,No DR -> referable DR,212,4.022770398481973
+DeiT-III,Referable DR -> No DR,315,5.977229601518027
+DeiT-III,Errors >= 2 grades,565,10.721062618595825
+DeiT-III,High-confidence incorrect (>=0.80),36,0.683111954459203
+M12,Mild -> No DR,265,5.028462998102467
+M12,Severe -> Moderate,39,0.7400379506641366
+M12,PDR -> Moderate,18,0.3415559772296015
+M12,No DR -> referable DR,75,1.4231499051233396
+M12,Referable DR -> No DR,186,3.5294117647058822
+M12,Errors >= 2 grades,293,5.55977229601518
+M12,High-confidence incorrect (>=0.80),194,3.681214421252372
+M13-D,Mild -> No DR,301,5.71157495256167
+M13-D,Severe -> Moderate,48,0.9108159392789373
+M13-D,PDR -> Moderate,20,0.3795066413662239
+M13-D,No DR -> referable DR,65,1.2333965844402277
+M13-D,Referable DR -> No DR,246,4.667931688804554
+M13-D,Errors >= 2 grades,338,6.413662239089184
+M13-D,High-confidence incorrect (>=0.80),249,4.724857685009487
